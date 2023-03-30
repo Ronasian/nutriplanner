@@ -17,12 +17,17 @@
 
 
 ## Credits
-### GitHub Collaborators
+### GitHub Collaborators:
 Leslie Sanchez - https://github.com/lexslie
+
 Paloma Baker - https://github.com/PalomaBaker
+
 Kyle Engelbert - https://github.com/KyleBootCamp
+
 Maryam Selassie - https://github.com/MariCods
+
 Brian Lascuna - https://github.com/Brian-Lascuna
+
 Ronan Sanchez -  https://github.com/Ronasian
 
 ## License
