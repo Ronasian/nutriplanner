@@ -1,36 +1,13 @@
-
-const url = 'https://www.edamam.com/#!/Full_Recipe_Analysis/post_api_nutrition_details';
-const app_id = '0b73859d';
-const app_key = '844eab6757ea5304250ae7aee4b9cf63'; 
-
-const recipe_url = 'https://www.edamam.com/recipes/1234'; // example URL - recipe you want to analyze
-
-const payload = {app_id: app_id, app_key: app_key, url: recipe_url};
-
-//request for recipe nutrition data 
-fetch(url, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-})
-.then(response => {
-    if (response.ok) {
-        response.json().then(nutrition_info => {
-            console.log(nutrition_info);
-        });
-    } else {
-        console.log('Error: Unable to retrieve nutrition information.');
-    }
-})
-.catch(error => console.error(error));
-
-
-//request for a specific ingredient's nutrition data
+//setting the html elements to const
 const urlTwo = 'https://api.edamam.com/api/nutrition-data';
 const form = document.getElementById('nutrition-form');
 const input = document.getElementById('nutrition-input');
 const output = document.getElementById('nutrition-data');
+const app_id = '0b73859d'; //necessary info for API call
+const app_key = '844eab6757ea5304250ae7aee4b9cf63'; //necessary info for API call
 
+
+//First API call - gets nutrition data for a single food item/ingredient - must specifiy exact quantity 
 form.addEventListener('submit', event => {
     event.preventDefault();
     console.log('Form submitted');
@@ -39,11 +16,22 @@ form.addEventListener('submit', event => {
     fetch(`${urlTwo}?${query}`)
     .then(response => {
         if (response.ok) {
-            console.log('Response is ok'); // Add this line
-            response.json().then(nutrition_data => {
-                output.textContent = JSON.stringify(nutrition_data, null, 2);
-                console.log(nutrition_data)
+            console.log('Response is ok'); 
+            response.json().then(data => {
+                const nutrientValues = {};
+                const nutrientsToDisplay = ['ENERC_KCAL', 'FAT', 'FASAT', 'FATRN', 'CHOLE', 'NA', 'CHOCDF', 'FIBTG', 'SUGAR', 'PROCNT', 'VITA_RAE', 'VITC', 'CA', 'FE'];
+                nutrientsToDisplay.forEach(nutrient => {
+                    if (data.totalNutrients[nutrient]) {
+                        nutrientValues[nutrient] = data.totalNutrients[nutrient].quantity;
+                    } else {
+                        nutrientValues[nutrient] = 0;
+                    }
+                });
+                output.textContent = JSON.stringify(nutrientValues, null, 2); //outputs the sepcified nutritent values
+                console.log(nutrientValues);
             });
+            
+            
         } else {
             output.textContent = 'Error: Unable to retrieve nutrition data.';
         }
@@ -51,5 +39,3 @@ form.addEventListener('submit', event => {
     .catch(error => console.error(error));
 
 });
-
-

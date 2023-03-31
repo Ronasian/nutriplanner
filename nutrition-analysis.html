@@ -3,7 +3,7 @@
   <body>
     <header>
       <h1>Nutrition Analysis and Recipes</h1>
-      <button><a href="#">Home</a></button>
+      <button><a href="#homepage.html">Home</a></button>
     </header>
     <main>
         <form id="nutrition-form">
@@ -12,7 +12,12 @@
             <button type="submit">Get Nutrition Data</button>
         </form>
         <div id="nutrition-data"></div>
-      <div id="search-results"></div>
+        <div id="output-container">
+          <form id="nutrition-output" >
+            <label for="nutrition-output">Nutrition data:</label>
+            <output type="text" id="nutrition-output" name="nutrition-output" for="nutrition-input"></output>
+          </form>
+        </div>
     </main>
   </body>
   <script src= 'nutrition-analysis.js'></script>
