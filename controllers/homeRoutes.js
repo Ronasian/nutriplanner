@@ -3,16 +3,16 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    res.render('homepage', { layout: 'main' });
+    res.render('homepage', { style: 'homepage.css' });
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  /* if (req.session.logged_in) {
     res.redirect('/');
     return;
-  }
+  } */
 
-  res.render('login');
+  res.render('login', { style: 'login.css' });
 });
 
 module.exports = router;
