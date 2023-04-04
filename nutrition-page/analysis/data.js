@@ -26,9 +26,24 @@ const app_key = '844eab6757ea5304250ae7aee4b9cf63'; //necessary info for API cal
                       nutrientValues[nutrient] = 0;
                     }
                   });
-                 output.textContent = JSON.stringify(nutrientValues, null, 2); //outputs the sepcified nutritent values
-                 console.log(nutrientValues);
-             });
+                // creating the ul elements for the list items
+                const list = document.createElement('ul');
+
+                // loop through the values and add each one as a <li> item 
+                for (const nutrient in nutrientValues) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${nutrient}: ${nutrientValues[nutrient]}`;
+                    list.appendChild(listItem);
+                }
+
+                // appending the list to the output element
+                output.innerHTML = '';
+                output.appendChild(list);
+
+                console.log(nutrientValues);
+
+            });
+                
            
            
          } else {
