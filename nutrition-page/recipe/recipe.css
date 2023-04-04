@@ -1,0 +1,7 @@
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 50vh;
+    width: 100%;
+}
