@@ -35,14 +35,17 @@ ul {
 
 li {
     padding: 10px;
-    right: 0px;
 }
 
 input, 
 select {
     position: relative;
-    right: 0px;
-    width: 100px;
-    margin-left: 5px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+#feet,
+#inches {
+    width: 25px;
 }
 
