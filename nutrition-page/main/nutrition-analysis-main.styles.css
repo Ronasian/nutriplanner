@@ -1,0 +1,21 @@
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #eee;
+  }
+  
+  #nav-text {
+   margin:0px;
+  }
+  
+  #nav-button {
+    font-size: medium;
+  }
+  
+  #content-wrapper {
+    padding: 150px;
+    text-align: center;
+  }
+  
