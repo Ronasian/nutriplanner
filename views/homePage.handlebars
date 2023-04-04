@@ -3,8 +3,12 @@
     <h2>Fitness Tracker</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum perspiciatis placeat tempore aut minima facilis
         illum, eveniet impedit officia odit nemo magni cum harum ad labore officiis modi sed fugiat.</p>
+    {{#unless logged_in}}
     <button type="button" class="header-btn" id="login-btn">Login</button>
     <button type="button" class="header-btn" id="signup-btn">Sign Up</button>
+    {{else}}
+    <button type="button" class="header-btn" id="logout-btn">Logout</button>
+    {{/unless}}
     
 </header>
 
