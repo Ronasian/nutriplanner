@@ -9,29 +9,64 @@
 body {
   background-color: lightblue;
   text-align: center;
-  font-size: 150%;
+  font-size: 170%;
 }
 
-.header {
-  background-image: url(./images/food.jpg);
+header .navigation a{
+    font-size: 70%;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    transition: 0.3s;
+    float: left;
+    margin-bottom: 5%;
+    outline-color: white;
+    outline-style: solid;
+}
+
+.navbar .dropdown .dropbtn{
+    display: none;
+}
+
+.navbar .dropdown-content{
+    display: none;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 10px;
+}
+
+header .navigation a:hover{
+    background: black;
+    color: white;
+}
+
+header {
+  background-image: url(./images/food\ banner.png);
+  background-size: cover;
   color: white;
   text-align: center;
-  padding: 10px;
-  min-height: 120px;
+  padding: 5px;
+  min-height: 100px;
   opacity: 0.8;
 }
 
 .intro {
-  margin: auto;
-  padding: 5px;
+  padding: 18px;
   text-align: center;
+  min-width: max-content;
   max-width: fit-content;
-  max-height: 25px;
+  max-height: 20px;
   display: flex;
   background-color: whitesmoke;
   opacity: 0.9;
   color: black;
-  margin-top: 40px;
+  align-items: center;
+  margin-left: 25%;
+  position: relative;
 }
 
 
@@ -50,4 +85,17 @@ body {
 
 .searchBar {
   font-size: 70%;
+}
+
+@media (max-width: 860px){
+    header .navigation{
+        display: none;
+    }
+    .intro {
+        font-size: 110%;
+        margin-left: 25%;
+    }
+    body {
+        font-size: 120%;
+    }
 }
