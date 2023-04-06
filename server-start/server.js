@@ -1,5 +1,4 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
 const helmet = require('helmet');
