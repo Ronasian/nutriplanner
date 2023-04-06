@@ -53,4 +53,9 @@ calculateBtn.addEventListener('click', (e) => {
 			calDiv.classList.remove('hidden');
 		})
 	    .catch(err => console.error(err));
+<<<<<<< HEAD
 });
+=======
+});
+
+>>>>>>> c401e0a77b29639761df1f8adc79f9d30c2a4e9d
