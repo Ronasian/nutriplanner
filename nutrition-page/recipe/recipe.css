@@ -22,14 +22,14 @@ header .navigation{
   
 }
 header .navigation a{
-    color: black;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 1px;
     padding: 2px 15px;
     border-radius: 20px;
     transition: 0.3s;
-  
+   float: left;
    
   
   }
@@ -41,8 +41,8 @@ header .navigation a{
  } */
 
  header .navigation a:hover{
-    background: lightcyan;
-    color: black;
+    background: black;
+    color: white;
  }
 
  h2{
@@ -76,24 +76,28 @@ header .navigation a{
 
 form{
    
-    font-size: 20px;
-    line-height: 1cm;
-    text-align: center;
+    font-size: 15px;
+    text-align:left;
+    line-height: 1.5cm;
+    margin-left: 1cm;
+  }
     
-}
+
 
 #input1, #input2, #input3, #input4{
    border: .75px solid black;
    border-radius: 10px;
-   line-height: 1px;
+   line-height: 2px;
 }
 
 .bttn{
 background-color: white;
 border: 1px solid;
 border-radius: 10px;
-padding: 2px;
-margin-top: 10px;
+ padding-left: 6px; 
+ padding-right: 6px;
+margin-left: 3.5cm;
+/* margin-top: 10px; */
 }
 
 .bttn:hover{

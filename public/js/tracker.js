@@ -31,4 +31,5 @@ calculateBtn.addEventListener('click', (e) => {
 			console.log(response);
 		})
 	    .catch(err => console.error(err));
-})
+});
+
