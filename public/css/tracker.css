@@ -49,3 +49,11 @@ select {
     width: 25px;
 }
 
+#calories {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
