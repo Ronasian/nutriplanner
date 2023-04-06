@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipe-Search</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./recipe.css">
@@ -42,6 +42,21 @@
                  
                   
                 <form>
+                    <label for="input0">What would type of cusine would you like to eat?</label>
+                    <!-- <input type="text" id="input0" name="input0"><br> -->
+                    <select name="input0" id="input0" multiple>
+                        <option value="input0" id="input0" name="input0">American</option>
+                        <option value="input0" id="input0" name="input0">Asian</option>
+                        <option value="input0" id="input0" name="input0">Central European</option>
+                        <option value="input0" id="input0" name="input0">Italian</option>
+                        <option value="input0" id="input0" name="input0">Caribbian</option>
+                        <option value="input0" id="input0" name="input0">Mediterranean</option>
+                        <option value="input0" id="input0" name="input0">South american</option>
+                        <option value="input0" id="input0" name="input0">Middle eastern </option>
+                        <option value="input0" id="input0" name="input0">World</option>
+                        </select>
+                        <br>
+
                     <label for="input1">What would you like to eat?</label>
                     <input type="text" id="input1" name="input1"><br>
 
@@ -49,7 +64,20 @@
                     <input type="text" id="input2" name="input2"><br>
 
                     <label for="input3">Do you have an dietary restrictions?</label>
-                    <input type="text" id="input3" name="input3"><br>
+                    <select name="input3" id="input3" multiple>
+                    <option value="input3" id="input3" name="input3">Crustcean-Free</option>
+                        <option value="input3" id="input3" name="input3">Dairy-Free</option>
+                        <option value="input3" id="input3" name="input3">Egg-Free</option>
+                        <option value="input3" id="input3" name="input3">Fish-Free</option>
+                        <option value="input3" id="input3" name="input3">Gluten-Free</option>
+                        <option value="input3" id="input3" name="input3">Vegetarian</option>
+                        <option value="input3" id="input3" name="input3">Vegan </option>
+                        <option value="input3" id="input3" name="input3">Shellfish-Free</option>
+                        <option value="input3" id="input3" name="input3">Soy-Free</option>
+                        <option value="input3" id="input3" name="input3">Pescatarian</option>
+                        <option value="input3" id="input3" name="input3">Peanut-Free</option>
+                        </select>
+                    <br>
 
                     <label for="input4">Is there a calorie max in mind?</label>
                     <input type="text" id="input4" name="input4"><br>

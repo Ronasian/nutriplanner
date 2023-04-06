@@ -1,16 +1,21 @@
 const form = document.querySelector('form');
 //const generateCards = require('./generateCards');
 var recipeContainer = document.querySelector('#output');
+var input0 = document.querySelector('#input0');
+var input1 = document.querySelector('#input1');
+var input2 = document.querySelector('#input2');
+var input3 = document.querySelector('#input3');
+var input4 = document.querySelector('#input4');
 form.addEventListener('submit', function(event) {
   event.preventDefault(); // prevent the form from submitting
 
   const userInput = {
-    query: 'pasta',
-    cuisine: 'italian',
-    maxReadyTime: '20',
+    query: input1.value,
+    cuisine: input0.value,
+    maxReadyTime: input2.value,
     type: 'main course',
     minCalories: '50',
-    maxCalories: '800'
+    maxCalories: input4.value
   };
   
   const options = {
