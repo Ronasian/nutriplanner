@@ -1,0 +1,58 @@
+#home {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+button {
+    width: 80px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+    padding: 30px;
+}
+
+main {
+    position: relative;
+    width: 100%;
+}
+
+div {
+    width: 600px;
+    border: 1px solid;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+}
+
+input, 
+select {
+    position: relative;
+    width: 80px;
+    margin-left: 10px;
+}
+
+#feet,
+#inches {
+    width: 25px;
+}
+
+#calories {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}

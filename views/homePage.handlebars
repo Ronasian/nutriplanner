@@ -4,10 +4,16 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum perspiciatis placeat tempore aut minima facilis
         illum, eveniet impedit officia odit nemo magni cum harum ad labore officiis modi sed fugiat.</p>
     {{#unless logged_in}}
-    <button type="button" class="header-btn" id="login-btn">Login</button>
-    <button type="button" class="header-btn" id="signup-btn">Sign Up</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="login-btn">
+        Login
+    </button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="signup-btn">
+        Sign Up
+    </button>
     {{else}}
-    <button type="button" class="header-btn" id="logout-btn">Logout</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="logout-btn">
+        Logout
+    </button>
     {{/unless}}
     
 </header>
@@ -17,21 +23,27 @@
         <div class="content">
             <div class="title">Title</div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quis debitis quae aperiam perferendis voluptate nulla impedit cupiditate expedita. Necessitatibus reiciendis ex blanditiis nulla totam beatae doloremque quisquam facere quia?
-            <a href="" class="button">Button</a>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="calorie-tracker">
+                Calorie Tracker
+            </button>
         </div>
     </div>
     <div class="box">
         <div class="content">
             <div class="title">Title</div>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione qui praesentium veniam, harum, ab reiciendis numquam beatae debitis et blanditiis labore laboriosam quis quidem a vel repellat sequi illum delectus.
-            <a href="" class="button">Button</a>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="nutrition-analysis">
+                Nutrition Analysis
+            </button>
         </div>
     </div>
     <div class="box">
         <div class="content">
             <div class="title">Title</div>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, voluptates nulla? In pariatur atque vitae, eius delectus ipsa cupiditate quae dolore natus amet aliquid provident molestiae aut nostrum laudantium similique.
-            <a href="" class="button">Button</a>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="recipes">
+                Nutritional Recipes
+            </button>
         </div>
     </div>
 </div>

@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  /* if (req.session.logged_in) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
-  } */
+  }
 
   res.render('login', { 
     style: 'login.css',
@@ -31,6 +31,33 @@ router.get('/signup', (req, res) => {
     script: 'login.js',
     title: 'Fitness App Sign-in'
   });
-})
+});
+
+router.get('/calorie-tracker', withAuth, (req, res) => {
+  res.render('tracker', {
+    style: 'tracker.css',
+    script: 'tracker.js',
+    title: 'Fitness Tracker Page',
+    logged_in: req.session.logged_in
+  })
+});
+
+router.get('/nutrition-analysis', withAuth, (req, res) => {
+  res.render('analysis', {
+    style: 'analysis.css',
+    script: 'analysis.js',
+    title: 'Nutrition Analysis',
+    logged_in: req.session.logged_in
+  })
+});
+
+router.get('/recipes', withAuth, (req, res) => {
+  res.render('recipe', {
+    style: 'recipe.css',
+    script: 'recipe.js',
+    title: 'Nutrition Recipes',
+    logged_in: req.session.logged_in
+  })
+});
 
 module.exports = router;
