@@ -1,0 +1,53 @@
+#main-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+body {
+  background-color: lightblue;
+  text-align: center;
+  font-size: 150%;
+}
+
+.header {
+  background-image: url(./images/food.jpg);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  min-height: 120px;
+  opacity: 0.8;
+}
+
+.intro {
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  max-width: fit-content;
+  max-height: 25px;
+  display: flex;
+  background-color: whitesmoke;
+  opacity: 0.9;
+  color: black;
+  margin-top: 40px;
+}
+
+
+.card {
+  margin: auto;
+  margin-top: 15px;
+  padding: 5px;
+  border-style:double;
+  border-width: 4px;
+  max-width: fit-content;
+  display: flex;
+  line-height: 1.6em;
+  font-size: 85%;
+  text-align: left;
+}
+
+.searchBar {
+  font-size: 70%;
+}
