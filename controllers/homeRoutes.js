@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     res.render('homepage', { 
       style: 'homepage.css',
       script: 'homepage.js',
-      title: 'Fitness-App-Unnamed',
+      title: 'NutriPlanner',
       logged_in: req.session.logged_in
     });
 });
@@ -20,7 +20,7 @@ router.get('/login', (req, res) => {
   res.render('login', { 
     style: 'login.css',
     script: 'login.js',
-    title: 'Fitness App Login',
+    title: 'NutriPlanner Login',
     logged_in: req.session.logged_in
   });
 });
@@ -28,8 +28,8 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup', { 
     style: 'signup.css',
-    script: 'login.js',
-    title: 'Fitness App Sign-in'
+    script: 'signup.js',
+    title: 'NutriPlanner Sign Up'
   });
 });
 

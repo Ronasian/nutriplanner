@@ -2,21 +2,18 @@ body {
     background-color: lightblue;
 }
 
-.sign-up {
-    background-color: white;
+.signup-win {
     margin: auto;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 50vh;
-    width: 15vw;
-    border-radius: 5px;
+    margin-top: 80px;
+}
+
+.logo {
+    color: black;
 }
 
 h1 {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin: 20px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 50px;
+    color: white;
 }
