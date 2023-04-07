@@ -1,0 +1,70 @@
+
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation a{
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  float: left;
+}
+
+.navigation a:hover {
+  background: black;
+  color: white;
+}
+
+#calculate {
+  width: 80px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+#tracker {
+  background-color: aliceblue;
+  width: 600px;
+  border: 1px solid;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+}
+
+input {
+  position: relative;
+  width: 80px;
+  margin-left: 10px;
+}
+
+#feet,
+#inches {
+  width: 25px;
+}
+
+#calories {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}

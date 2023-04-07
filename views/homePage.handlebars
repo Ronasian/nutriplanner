@@ -1,0 +1,50 @@
+<header>
+<h2>NutriPlanner</h2>
+    <p>"It is health that is real wealth and not pieces of gold and silver" - Mahatma Gandhi </p>
+    {{#unless logged_in}}
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded header-btn" id="login-btn">
+        Login
+    </button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded header-btn" id="signup-btn">
+        Sign Up
+    </button>
+    {{else}}
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded header-btn" id="logout-btn">
+        Logout
+    </button>
+    {{/unless}}
+    </header>
+<div class="container">
+    <div class="box">
+        <div class="content">
+            <div class="title">Calorie Tracker </div>
+                Generate the daily amount of calories your body needs!
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded page-btn" id="calorie-tracker">
+                    Calorie Tracker
+                </button>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            <div class="title">Nutrition Analysis</div>
+                Get the nutritional data of your food based on the measurmeants of single ingredients 
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded page-btn" id="nutrition-analysis">
+                    Nutrition Analysis
+                </button>
+
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            <div class="title">Recipe Generator</div>
+                Access recipes based on your goals and preferences 
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded page-btn" id="recipes">
+                    Recipes
+                </button>
+        </div>
+    </div>
+</div>
+ </div>
+ {{#if logged_in}}
+ <script src="/js/logout.js"></script>
+ {{/if}}

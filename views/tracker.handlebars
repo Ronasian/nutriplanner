@@ -1,0 +1,33 @@
+<header>
+        <div class="navigation">
+            <a href="/">Home</a>
+            <a href="#">About</a>
+            <a href="/nutrition-analysis">Nutrition Breakdown</a>
+            <a href="#">Nutrition Tracker</a>
+            <a href="/recipes">Recipes</a>
+        </div>
+    </header>
+    <main>
+        <div id="tracker">
+            <h1>Calorie Tracker</h1>
+            <p>Enter your information below to calculate 
+            your neccessary daily caloric intake</p>
+            <ul>
+                <li>Age
+                    <input id="age">
+                </li>
+                <li>Height
+                    <input id="feet" placeholder="ft.">
+                    <input id="inches" placeholder="in.">
+                </li>
+                <li>Weight
+                    <input id="weight" placeholder="lbs.">
+                </li>
+            </ul>
+            <button id="calculate">Calculate</button>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <ul id="calories"></ul>
+        </div>
+    </main>

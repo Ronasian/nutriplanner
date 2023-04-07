@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+}
+
+.signup-win {
+    margin: auto;
+    margin-top: 80px;
+}
+
+.logo {
+    color: black;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 50px;
+    color: white;
+}
