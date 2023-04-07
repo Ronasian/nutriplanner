@@ -68,3 +68,7 @@ input {
 .hidden {
   display: none;
 }
+
+#results, #calories {
+  text-align: center;
+}

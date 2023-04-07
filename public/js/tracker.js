@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
+//import * as dotenv from 'dotenv'
+//dotenv.config()
 
 const age = document.getElementById('age');
 const feet = document.getElementById('feet');
@@ -21,7 +21,7 @@ function convertWeight(pounds) {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': process.env.API_CALORIES,
+		'X-RapidAPI-Key': 'e409a1e803msh766fbb1e9b121adp1bdf3cjsn6cf9edfecdb6',
 		'X-RapidAPI-Host': 'calorie-calculator.p.rapidapi.com'
 	}
 };

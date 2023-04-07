@@ -10,7 +10,7 @@
 } */
 
 body{
-    background-color: black;
+    background-color: lightblue;
 }
 
 .logo {
@@ -82,7 +82,7 @@ p{
     float: right;
     margin: 0 30px;
     position: relative;
-    bottom: 90px;
+    bottom: 60px;
 }
 
 .page-btn {
