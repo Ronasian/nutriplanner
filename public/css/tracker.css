@@ -33,7 +33,12 @@ h1 {
     font-size: 50px;
 }
 
-#tracker {
+h2 {
+    font-size: 25px;
+}
+
+#tracker,
+#results {
     background-color: aliceblue;
     width: 600px;
     border: 1px solid;
