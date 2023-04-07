@@ -3,7 +3,7 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    res.render('homepage', { 
+    res.render('homePage', { 
       style: 'homepage.css',
       script: 'homepage.js',
       title: 'NutriPlanner',
