@@ -71,6 +71,7 @@ form.addEventListener('submit', function(event) {
 }
   
   axios.request(options).then(function (response) {
+    recipeContainer.innerHTML = "";
     let recipeCards = generateCards(response);
     for (let i = 0; i < recipeCards.length; i++) {
       recipeContainer.append(recipeCards[i]);
