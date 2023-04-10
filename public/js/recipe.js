@@ -1,3 +1,7 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+
 const form = document.querySelector('form');
 var recipeContainer = document.querySelector('#output');
 var input0 = document.querySelector('#input0');
