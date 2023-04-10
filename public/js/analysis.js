@@ -5,13 +5,13 @@ const input = document.getElementById('search-input');
 const output = document.getElementById('output');
 const form = document.getElementById('search-form');
 const app_id = '0b73859d'; //necessary info for API call
-//const app_key = '844eab6757ea5304250ae7aee4b9cf63'; //necessary info for API call
+const app_key = '844eab6757ea5304250ae7aee4b9cf63'; //necessary info for API call
 
  form.addEventListener('submit', event => {
      event.preventDefault();
      console.log('Form submitted');
      const text = input.value;
-     const query = `app_id=${app_id}&app_key=${process.env.APIKEY_ANALYSIS}&ingr=${text}`;
+     const query = `app_id=${app_id}&app_key=${app_key}&ingr=${text}`;
      fetch(`${urlTwo}?${query}`)
      .then(response => {
          if (response.ok) {
