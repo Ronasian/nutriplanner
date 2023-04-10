@@ -54,7 +54,7 @@ router.get('/nutrition-analysis', withAuth, (req, res) => {
 router.get('/recipes', withAuth, (req, res) => {
   res.render('recipe', {
     style: 'recipe.css',
-    script: 'recipe.js',
+    script: 'recipe_bundle.js',
     title: 'Nutrition Recipes',
     logged_in: req.session.logged_in
   })

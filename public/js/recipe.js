@@ -1,5 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config()
 
 const form = document.querySelector('form');
 var recipeContainer = document.querySelector('#output');
