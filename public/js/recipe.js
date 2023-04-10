@@ -31,7 +31,7 @@ form.addEventListener('submit', function(event) {
       ranking: '2' // default value for ranking
     },
     headers: {
-      'X-RapidAPI-Key': '3d5db3c0abmsh320832ed35d8ba3p126149jsne027b3581b02',
+      'X-RapidAPI-Key': process.env.APIKEY_RECIPE,
       'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     }
   };
