@@ -81,27 +81,31 @@ function displayResults(response) {
 }
 
 const trackerFormHandler = async () => {
-	let userCentimeters = convertHeight(parseInt(feet.value), parseInt(inches.value));
-	let userKilograms = convertWeight(weight.value);
+	try {
+		let userCentimeters = convertHeight(parseInt(feet.value), parseInt(inches.value));
+		let userKilograms = convertWeight(weight.value);
 
-	const userData = {
-		centimeters: userCentimeters,
-		kilograms: userKilograms,
-		userAge: age.value
-	}
-	console.log(userData);
-	if (userData) {
-		const response = await fetch('/api/nutriplanner/tracker', {
-			method: 'POST',
-			body: JSON.stringify({ userData }),
-			headers: { 'Content-Type': 'application/json' },
-		  });
-		  if (response.ok) {
-			console.log(response);
-			receiveAPIData();
-		  } else {
-			alert('No response received');
-		  }
+		const userData = {
+			centimeters: userCentimeters,
+			kilograms: userKilograms,
+			userAge: age.value
+		}
+		console.log(userData);
+		if (userData) {
+			const response = await fetch('/api/nutriplanner/tracker', {
+				method: 'POST',
+				body: JSON.stringify({ userData }),
+				headers: { 'Content-Type': 'application/json' },
+			});
+			if (response.ok) {
+				console.log(response);
+				receiveAPIData();
+			} else {
+				alert('No response received');
+			}
+		}
+	} catch (err) {
+		console.log(err);
 	}
 }
 
