@@ -1,55 +1,66 @@
 // setting the html elements to const
-const urlTwo = 'https:api.edamam.com/api/nutrition-data';
-const searchBtn = document.getElementById('search-button');
-const input = document.getElementById('search-input');
+const input = document.getElementById('analysis');
 const output = document.getElementById('output');
-const form = document.getElementById('search-form');
-const app_id = '0b73859d'; //necessary info for API call
-const app_key = '844eab6757ea5304250ae7aee4b9cf63'; //necessary info for API call
+const form = document.querySelector('.analysis-form');
 
- form.addEventListener('submit', event => {
-     event.preventDefault();
-     console.log('Form submitted');
-     const text = input.value;
-     const query = `app_id=${app_id}&app_key=${app_key}&ingr=${text}`;
-     fetch(`${urlTwo}?${query}`)
-     .then(response => {
-         if (response.ok) {
-             console.log('Response is ok'); 
-             response.json().then(data => {
-                 const nutrientValues = {};
-                const nutrientsToDisplay = ['ENERC_KCAL', 'FAT', 'FASAT', 'FATRN', 'CHOLE', 'NA', 'CHOCDF', 'FIBTG', 'SUGAR', 'PROCNT', 'VITA_RAE', 'VITC', 'CA', 'FE'];
-                nutrientsToDisplay.forEach(nutrient => {
-                    if (data.totalNutrients[nutrient]) {
-                      nutrientValues[nutrient] = Math.round(data.totalNutrients[nutrient].quantity);
-                    } else {
-                      nutrientValues[nutrient] = 0;
-                    }
-                  });
-                // creating the ul elements for the list items
-                const list = document.createElement('ul');
+ const retrieveAPIData = async () => {
+    const response = await fetch('/api/nutriplanner/analysis', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      console.log('success');
+      const data = await response.json();
+      console.log(data);
+      displayData(data);
+    }
+ }
 
-                // loop through the values and add each one as a <li> item 
-                for (const nutrient in nutrientValues) {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${nutrient}: ${nutrientValues[nutrient]}`;
-                    list.appendChild(listItem);
-                }
+ function displayData(data) {
+  const nutrientValues = {};
+  const nutrientsToDisplay = ['ENERC_KCAL', 'FAT', 'FASAT', 'FATRN', 'CHOLE', 'NA', 'CHOCDF', 'FIBTG', 'SUGAR', 'PROCNT', 'VITA_RAE', 'VITC', 'CA', 'FE'];
+  nutrientsToDisplay.forEach(nutrient => {
+      if (data.totalNutrients[nutrient]) {
+        nutrientValues[nutrient] = Math.round(data.totalNutrients[nutrient].quantity);
+      } else {
+        nutrientValues[nutrient] = 0;
+      }
+    });
 
-                // appending the list to the output element
-                output.innerHTML = '';
-                output.appendChild(list);
+    // creating the ul elements for the list items
+    const list = document.createElement('ul');
 
-                console.log(nutrientValues);
+    // loop through the values and add each one as a <li> item 
+    for (const nutrient in nutrientValues) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${nutrient}: ${nutrientValues[nutrient]}`;
+        list.appendChild(listItem);
+    }
 
-            });
-                
-           
-           
-         } else {
-             output.textContent = 'Error: Unable to retrieve nutrition data.';
-         }
-     })
-     .catch(error => console.error(error));
+    // appending the list to the output element
+    output.innerHTML = '';
+    output.appendChild(list);
+ }
 
- });
+ const analysisFormHandler = async (event) => {
+    event.preventDefault();
+
+    const userInput = input.value;
+
+    if (userInput) {
+      const response = await fetch('/api/nutriplanner/analysis', {
+        method: 'POST',
+        body: JSON.stringify({ userInput }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        console.log(response);
+        retrieveAPIData();
+      } else {
+        alert('Failed to receive response');
+      }
+    }
+ }
+
+ form.addEventListener('submit', analysisFormHandler);

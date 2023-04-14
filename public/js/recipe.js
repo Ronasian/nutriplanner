@@ -1,83 +1,88 @@
-const form = document.querySelector('form');
 var recipeContainer = document.querySelector('#output');
-var input0 = document.querySelector('#input0');
 var input1 = document.querySelector('#input1');
 var input2 = document.querySelector('#input2');
 var input3 = document.querySelector('#input3');
 var input4 = document.querySelector('#input4');
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // prevent the form from submitting
+var input5 = document.querySelector('#input5');
 
-  const userInput = {
-    query: input1.value,
-    cuisine: input0.value,
-    maxReadyTime: input2.value,
-    type: 'main course',
-    minCalories: '50',
-    maxCalories: input4.value
-  };
-  
-  const options = {
-    method: 'GET',
-    url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch',
-    params: {
-      query: userInput.query,
-      cuisine: userInput.cuisine,
-      maxReadyTime: userInput.maxReadyTime,
-      type: userInput.type,
-      minCalories: userInput.minCalories,
-      maxCalories: userInput.maxCalories,
-      number: '10', // default value for number
-      ranking: '2' // default value for ranking
-    },
-    headers: {
-      'X-RapidAPI-Key': '3d5db3c0abmsh320832ed35d8ba3p126149jsne027b3581b02', //process.env.APIKEY_RECIPE,
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-    }
-  };
+function generateCards (response) {
+  let cardContainer = [];
+  let recipeArr = response.results;
 
-  function generateCards (response) {
-    let cardContainer = [];
-    let recipeArr = response.data.results;
+  for (let i = 0; i < recipeArr.length; i++) {
+      let recipeCard = document.createElement("div");
+      recipeCard.className = "max-w-sm rounded overflow-hidden shadow-lg";
 
-    for (let i = 0; i < recipeArr.length; i++) {
-        let recipeCard = document.createElement("div");
-        recipeCard.className = "max-w-sm rounded overflow-hidden shadow-lg";
+      let recipeImg = document.createElement("img");
+      recipeImg.className = "w-full";
+      recipeImg.src = recipeArr[i].image;
 
-        let recipeImg = document.createElement("img");
-        recipeImg.className = "w-full";
-        recipeImg.src = recipeArr[i].image;
+      let recipeCardBody = document.createElement("div");
+      recipeCardBody.className = "px-6 py-4";
 
-        let recipeCardBody = document.createElement("div");
-        recipeCardBody.className = "px-6 py-4";
+      let recipeName = document.createElement("div");
+      recipeName.className = "font-bold text-xl mb-2";
+      recipeName.textContent = recipeArr[i].title;
 
-        let recipeName = document.createElement("div");
-        recipeName.className = "font-bold text-xl mb-2";
-        recipeName.textContent = recipeArr[i].title;
+      let recipeCalories = document.createElement("p");
+      recipeCalories.className = "text-gray-700 text-base";
+      recipeCalories.textContent = "Calories: " + recipeArr[i].nutrition.nutrients[0].amount;
 
-        let recipeCalories = document.createElement("p");
-        recipeCalories.className = "text-gray-700 text-base";
-        recipeCalories.textContent = "Calories: " + recipeArr[i].nutrition.nutrients[0].amount;
+      recipeCardBody.append(recipeName);
+      recipeCardBody.append(recipeCalories);
 
-        recipeCardBody.append(recipeName);
-        recipeCardBody.append(recipeCalories);
+      recipeCard.append(recipeImg);
+      recipeCard.append(recipeCardBody);
+      cardContainer.push(recipeCard);
+  }
 
-        recipeCard.append(recipeImg);
-        recipeCard.append(recipeCardBody);
-        cardContainer.push(recipeCard);
-    }
-
-    return cardContainer;
+  return cardContainer;
 }
-  
-  axios.request(options).then(function (response) {
+
+const receiveAPIData = async () => {
+  const response = await fetch('/api/nutriplanner/recipes', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    console.log('success');
+    const data = await response.json();
+    console.log(data);
     recipeContainer.innerHTML = "";
-    let recipeCards = generateCards(response);
+    let recipeCards = generateCards(data);
     for (let i = 0; i < recipeCards.length; i++) {
       recipeContainer.append(recipeCards[i]);
-    }            
-  }).catch(function (error) {
-    console.error(error);
-  });
-  
-});
+    }
+  }
+}
+
+
+const recipeFormHandler = async (event) => {
+  event.preventDefault();
+
+  const userInput = {
+    query: input2.value,
+    cuisine: input1.value,
+    maxReadyTime: input3.value,
+    type: 'main course',
+    minCalories: '50',
+    maxCalories: input5.value
+  };
+
+  if (userInput) {
+    const response = await fetch('/api/nutriplanner/recipes', {
+      method: 'POST',
+      body: JSON.stringify({ userInput }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      console.log(response);
+      receiveAPIData();
+    } else {
+      alert('No response received');
+    }
+  }
+};
+
+let recipeForm = document.querySelector('.recipe-form');
+if (recipeForm) {recipeForm.addEventListener('submit', recipeFormHandler);}

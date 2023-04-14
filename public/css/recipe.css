@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #81afb2;
     font-family: "Poppins", sans-serif;
-}
+} */
 
 body{
     position: relative;
@@ -14,6 +14,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: lightblue;
     /* justify-content: flex-start; */
     
 }  
@@ -66,69 +67,18 @@ header .navigation a:not(:last-child){
    
 }
 
-  
-  
-
-  
-  
-
-
 .recipe-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    flex: 1 1 auto;
     height: 50vh;
     width: 100%;
 }
 
-
-form{
-   
-    font-size: 15px;
-    text-align:left;
-    margin-left: 1cm;
-    line-height: 1cm;
-  }
-    
-
-
- 
-   #input1, #input2, #input4{
-   border: 1px solid black;
-   border-radius: 15px;
-   line-height: 2px;
-   /* padding: 5px 5px; */
-   
-   
-   
-}
-
-#input0, #input3{
-  display: block;
- font-size: 10px;
- color: white;
- text-align: center;
- padding: 5px 5px;
- border-radius: 15px;
- text-decoration: none;
- 
-}
-
-
-.bttn{
-background-color: white;
-border: 1px solid;
-border-radius: 10px;
- padding-left: 6px; 
- padding-right: 6px;
-margin-left: 3.5cm;
-
-/* margin-top: 10px; */
-}
-
-.bttn:hover{
-    background-color: lightslategray;
-    color: white;
+.form-card {
+  margin: auto;
+  margin-top: 50px;
 }
 
 

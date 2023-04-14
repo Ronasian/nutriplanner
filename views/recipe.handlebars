@@ -25,7 +25,7 @@
         </header>
         
         
-    <form>
+    {{!-- <form class="recipe-form">
         <label for="input0">What would type of cusine would you like to eat?</label>
         <!-- <input type="text" id="input0" name="input0"><br> -->
         <select name="input0" id="input0" multiple>
@@ -68,7 +68,70 @@
 
 
         <input type="submit" value="Submit" class="bttn">
-    </form>
+    </form> --}}
+
+    <div class="w-full max-w-xs flex form-card">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 recipe-form">
+            <div class="mb-3 xl:w-96">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="input1">
+                    What type of cuisine?
+                </label>
+                <select data-te-select-init id="input1">
+                    <option value="American">American</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Central">Central</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Carribean">Carribean</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="South American">South American</option>
+                    <option value="Middle Eastern">Middle Eastern</option>
+                    <option value="World">World</option>
+                </select>
+            </div>
+            <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="input2">
+                What would you like to eat?
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="input2" type="text" placeholder="Enter a type of dish...">
+            </div>
+            <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="input3">
+                How long do you want it to take?
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="input3" type="text" placeholder="Enter time in minutes...">
+            </div>
+            <div class="mb-3 xl:w-96">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="input4">
+                    Any dietary restrictions?
+                </label>
+                <select data-te-select-init id="input4">
+                    <option value="">None</option>
+                    <option value="Crustacean-Free">Crustacean-Free</option>
+                    <option value="Dairy-Free">Dairy-Free</option>
+                    <option value="Egg-Free">Egg-Free</option>
+                    <option value="Fish-Free">Fish-Free</option>
+                    <option value="Gluten-Free">Gluten-Free</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Shellfish-Free">Shellfish-Free</option>
+                    <option value="Soy-Free">Soy-Free</option>
+                    <option value="Pescatarian">Pescatarian</option>
+                    <option value="Peanut-Free">Peanut-Free</option>
+                </select>
+            </div>
+            <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="input5">
+                Is there a calorie max in mind?
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="input5" type="text" placeholder="Min: 50 Calories">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
 
     <div class="recipe-container" id="output">
     </div>

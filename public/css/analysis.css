@@ -9,11 +9,10 @@
 body {
 background-color: lightblue;
 text-align: center;
-font-size: 170%;
 }
 
 header .navigation a{
-  font-size: 70%;
+  font-size: 90%;
   font-weight: bolder;
   color: white;
   text-decoration: none;
@@ -52,6 +51,18 @@ text-align: center;
 padding: 5px;
 min-height: 100px;
 opacity: 0.8;
+}
+
+h2 {
+  font-size: 150%;
+  text-align: center;
+}
+
+.analysis-form {
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  left: 800px;
 }
 
 .intro {
