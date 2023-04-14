@@ -40,7 +40,7 @@ NutriPlanner empowers me to make informed choices about my nutrition, saves me t
 ![Nutrients](./public/assets/images/proj-2-signup.jpg)
 ![Nutrients](./public/assets/images/proj-2-calorie-tracker.jpg)
 ![Nutrients](./public/assets/images/analysis_page.png)
-![Nutrients](./public/assets/images/proj-2-recipepage.png)
+![Nutrients](./public/assets/images/recipe_page.png)
 
 ## Deployed Application Links
 
